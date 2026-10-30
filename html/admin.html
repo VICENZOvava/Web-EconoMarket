@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoMarket - Administração</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+    <div class="grain"></div>
+
+    <nav class="nav page-nav">
+        <a class="logo" href="main.html">
+            <span class="logo-dot"></span>
+            EconoMarket
+        </a>
+
+        <div class="page-actions">
+            <a class="page-link" href="main.html">Comparador</a>
+            <a class="page-link" href="perfil.html">Perfil</a>
+            <button class="nav-cta" id="btnLogout" type="button">Sair</button>
+        </div>
+    </nav>
+
+    <main class="admin-page">
+        <header class="admin-header">
+            <div>
+                <span class="eyebrow">Painel restrito</span>
+                <h1>Área <em>administrativa.</em></h1>
+                <p>Gerencie produtos, supermercados e preços por estabelecimento preservando os vínculos existentes.</p>
+            </div>
+            <span class="admin-label">GERENTE</span>
+        </header>
+
+        <nav class="admin-tabs" aria-label="Módulos de gerenciamento">
+            <button class="admin-tab active" id="tabProdutos" type="button" aria-selected="true">Produtos</button>
+            <button class="admin-tab" id="tabMercados" type="button" aria-selected="false">Supermercados</button>
+            <button class="admin-tab" id="tabPrecos" type="button" aria-selected="false">Preços por supermercado</button>
+        </nav>
+
+        <section class="admin-card">
+            <div class="admin-toolbar">
+                <div>
+                    <h2 id="tituloLista">Produtos cadastrados</h2>
+                    <p id="descricaoLista">Consulte, edite, desative ou reative produtos.</p>
+                </div>
+                <button class="primary-btn" id="btnNovo" type="button">+ Novo produto</button>
+            </div>
+
+            <div class="admin-search">
+                <label for="buscaRegistro">Pesquisar</label>
+                <input id="buscaRegistro" type="search" placeholder="Buscar por nome..." autocomplete="off">
+            </div>
+
+            <p class="admin-message" id="mensagem" role="status" aria-live="polite"></p>
+            <div class="table-wrap" id="tabelaContainer">
+                <table class="admin-table">
+                    <thead id="cabecalhoTabela"></thead>
+                    <tbody id="corpoTabela"></tbody>
+                </table>
+            </div>
+            <p class="empty-state" id="estadoVazio" hidden>Nenhum registro encontrado.</p>
+        </section>
+
+        <section class="admin-card editor-card" id="editorCard" hidden>
+            <div class="admin-toolbar">
+                <div>
+                    <h2 id="tituloFormulario">Novo produto</h2>
+                    <p>Os campos são validados pela API antes de serem gravados.</p>
+                </div>
+            </div>
+
+            <form id="adminForm">
+                <div class="admin-form-grid" id="camposFormulario"></div>
+                <div class="form-actions">
+                    <button class="secondary-btn" id="btnCancelar" type="button">Cancelar</button>
+                    <button class="primary-btn" id="btnSalvar" type="submit">Salvar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script type="module" src="../js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoMarket - Perfil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/perfil.css">
+</head>
+<body class="profile-body">
+
+    <div class="grain"></div>
+
+    <nav class="nav page-nav">
+        <a class="logo" href="main.html">
+            <span class="logo-dot"></span>
+            EconoMarket
+        </a>
+
+        <div class="page-actions">
+            <a class="page-link" href="main.html">
+                Comparador
+            </a>
+
+            <a class="page-link active" href="perfil.html">
+                Perfil
+            </a>
+
+            <a class="page-link" id="linkAdmin" href="admin.html" hidden>
+                Admin
+            </a>
+
+            <button class="nav-cta" id="btnLogout" type="button">
+                Sair
+            </button>
+        </div>
+    </nav>
+
+    <main class="profile-page">
+
+        <section class="profile-header">
+            <div>
+                <div class="eyebrow">
+                    Minha conta
+                </div>
+
+                <h1>
+                    Seu <em>perfil.</em>
+                </h1>
+
+                <p>
+                    Consulte e atualize seus dados cadastrados no EconoMarket.
+                </p>
+            </div>
+
+            <div class="profile-avatar-container">
+                <label class="profile-avatar" for="fotoPerfil">
+                    <span id="avatarInicial">E</span>
+                    <img id="avatarImagem" alt="Foto de perfil">
+                    <span class="avatar-edit">Alterar</span>
+                </label>
+
+                <input
+                    type="file"
+                    id="fotoPerfil"
+                    accept="image/png, image/jpeg, image/webp"
+                    hidden
+                >
+            </div>
+        </section>
+
+        <section class="profile-card">
+            <form id="perfilForm">
+
+                <div class="profile-grid">
+
+                    <div class="input-group">
+                        <label for="nome">Nome</label>
+                        <input
+                            id="nome"
+                            type="text"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input
+                            id="email"
+                            type="email"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="provedor">Tipo de conta</label>
+                        <input
+                            id="provedor"
+                            type="text"
+                            disabled
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="idUsuario">ID do usuário</label>
+                        <input
+                            id="idUsuario"
+                            type="text"
+                            disabled
+                        >
+                    </div>
+
+                </div>
+
+                <div class="profile-actions">
+                    <a class="secondary-btn" href="main.html">
+                        Voltar
+                    </a>
+
+                    <button
+                        class="comparison-btn"
+                        type="submit"
+                    >
+                        Salvar alterações
+                    </button>
+                </div>
+
+                <p class="form-message" id="mensagem"></p>
+
+            </form>
+        </section>
+
+        <section class="profile-card lists-card" id="minhasListas">
+            <div class="lists-header">
+                <div>
+                    <div class="eyebrow">Compras</div>
+                    <h2>Minhas listas</h2>
+                </div>
+
+                <a class="secondary-btn" href="main.html">Nova lista no comparador</a>
+            </div>
+
+            <p class="form-message" id="mensagemListas" role="status"></p>
+
+            <div id="listasSalvas" class="saved-lists"></div>
+        </section>
+
+    </main>
+
+    <script type="module" src="../js/perfil.js"></script>
+
+</body>
+</html>
